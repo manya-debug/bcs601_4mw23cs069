@@ -30,7 +30,7 @@ The application displays:
 - Uppercase string
 
 ## Live URL:
-https://string-utility-app.onrender.com
+https://bcs601-4mw23cs069-1.onrender.com
 
 ## GitHub Repository:
 https://github.com/manya-debug/bcs601_4mw23cs069
