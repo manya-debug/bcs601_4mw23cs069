@@ -1,0 +1,24 @@
+body {
+    text-align: center;
+    font-family: Arial;
+    background: linear-gradient(to right, #667eea, #764ba2);
+    color: white;
+}
+
+.tabs button {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 20px;
+    border: none;
+    background: white;
+    color: black;
+}
+
+.tab {
+    background: white;
+    color: black;
+    padding: 20px;
+    width: 300px;
+    margin: 20px auto;
+    border-radius: 10px;
+}

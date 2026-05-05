@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cloud Mini Project</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<h1>✨ Cloud Based Mini Project</h1>
+
+<div class="tabs">
+    <button onclick="showTab('hcf')">HCF & LCM</button>
+    <button onclick="showTab('reverse')">Reverse String</button>
+    <button onclick="showTab('factorial')">Factorial</button>
+</div>
+
+<div id="hcf" class="tab">
+    <form action="/hcf_lcm" method="post">
+        <input type="number" name="num1" placeholder="Enter number 1"><br>
+        <input type="number" name="num2" placeholder="Enter number 2"><br>
+        <button type="submit">Calculate</button>
+    </form>
+
+    {% if hcf %}
+    <p>HCF = {{hcf}}</p>
+    <p>LCM = {{lcm}}</p>
+    {% endif %}
+</div>
+
+<div id="reverse" class="tab" style="display:none;">
+    <form action="/reverse" method="post">
+        <input type="text" name="text"><br>
+        <button type="submit">Reverse</button>
+    </form>
+
+    {% if reversed %}
+    <p>Output: {{reversed}}</p>
+    {% endif %}
+</div>
+
+<div id="factorial" class="tab" style="display:none;">
+    <form action="/factorial" method="post">
+        <input type="number" name="num"><br>
+        <button type="submit">Find Factorial</button>
+    </form>
+
+    {% if factorial %}
+    <p>Output: {{factorial}}</p>
+    {% endif %}
+</div>
+
+<script>
+function showTab(tabId) {
+    document.getElementById('hcf').style.display = 'none';
+    document.getElementById('reverse').style.display = 'none';
+    document.getElementById('factorial').style.display = 'none';
+    document.getElementById(tabId).style.display = 'block';
+}
+</script>
+
+</body>
+</html>
