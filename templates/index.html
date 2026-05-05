@@ -15,38 +15,41 @@
     <button onclick="showTab('factorial')">Factorial</button>
 </div>
 
+<!-- HCF -->
 <div id="hcf" class="tab">
     <form action="/hcf_lcm" method="post">
-        <input type="number" name="num1" placeholder="Enter number 1"><br>
-        <input type="number" name="num2" placeholder="Enter number 2"><br>
+        <input type="number" name="num1" placeholder="Enter number 1"><br><br>
+        <input type="number" name="num2" placeholder="Enter number 2"><br><br>
         <button type="submit">Calculate</button>
     </form>
 
-    {% if hcf %}
-    <p>HCF = {{hcf}}</p>
-    <p>LCM = {{lcm}}</p>
+    {% if hcf is not none %}
+        <p>HCF = {{hcf}}</p>
+        <p>LCM = {{lcm}}</p>
     {% endif %}
 </div>
 
+<!-- Reverse -->
 <div id="reverse" class="tab" style="display:none;">
     <form action="/reverse" method="post">
-        <input type="text" name="text"><br>
+        <input type="text" name="text" placeholder="Enter text"><br><br>
         <button type="submit">Reverse</button>
     </form>
 
     {% if reversed %}
-    <p>Output: {{reversed}}</p>
+        <p>Output: {{reversed}}</p>
     {% endif %}
 </div>
 
+<!-- Factorial -->
 <div id="factorial" class="tab" style="display:none;">
     <form action="/factorial" method="post">
-        <input type="number" name="num"><br>
+        <input type="number" name="num" placeholder="Enter number"><br><br>
         <button type="submit">Find Factorial</button>
     </form>
 
     {% if factorial %}
-    <p>Output: {{factorial}}</p>
+        <p>Output: {{factorial}}</p>
     {% endif %}
 </div>
 
@@ -55,7 +58,13 @@ function showTab(tabId) {
     document.getElementById('hcf').style.display = 'none';
     document.getElementById('reverse').style.display = 'none';
     document.getElementById('factorial').style.display = 'none';
+
     document.getElementById(tabId).style.display = 'block';
+}
+
+window.onload = function() {
+    var activeTab = "{{ active_tab if active_tab else 'hcf' }}";
+    showTab(activeTab);
 }
 </script>
 
